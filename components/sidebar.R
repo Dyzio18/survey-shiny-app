@@ -7,12 +7,13 @@ library(shinydashboard)
 
 
 sidebar <- dashboardSidebar(
-  sidebarMenu(
+	sidebarMenu(
 
-    menuItem("Dataset", tabName = "dataset", icon = icon("cloud-upload")),
-    menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-    menuItem("Widgets", tabName = "widgets", icon = icon("th")),
-    menuItem("Settings", tabName = "settings", icon = icon("cog"))
+		menuItem("Dataset", tabName = "dataset", icon = icon("cloud-upload")),
+		menuItem("Visualisation", tabName = "visualisation", icon = icon("signal")),
+		menuItem("Data view", tabName = "widgets", icon = icon("folder-open")),
+		menuItem("Settings", tabName = "settings", icon = icon("cog"))
 
-  )
+	)
 )
+

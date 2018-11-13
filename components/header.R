@@ -6,5 +6,5 @@
 library(shinydashboard)
 
 
-header <- dashboardHeader(title = "Dyzio - Shine Demo")
+header <- dashboardHeader(title = "Survey App")
 
