@@ -1,4 +1,4 @@
-datasetPanel  <- tabItem(
+datasetModuleUI  <- tabItem(
     tabName = "dataset",
     h2("Dataset"),
     fluidRow(

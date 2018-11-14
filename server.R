@@ -5,7 +5,7 @@ source('./server/histBox.R')
 
 
 server <- function(input, output, session) {
-  
+	
 
 	sampleSurvey <- "E:\\survey-shiny-app\\www\\resources\\young-people-survey_kaggle.csv"
 	#sampleSurvey <- "https://raw.githubusercontent.com/Dyzio18/R-learning/master/young-people-survey_kaggle.csv"
@@ -18,7 +18,7 @@ dataFileReact <- reactive({
 						quote = input$quote)
 						
 	if (!is.null(input$dataFile$datapath)) {
-	  tryCatch({
+		tryCatch({
 			result <- read.csv(input$dataFile$datapath,
 						header = input$header,
 						sep = input$sep,
@@ -29,20 +29,20 @@ dataFileReact <- reactive({
 	}
 	return(result)
 })
-  
-  
-  output$headers <- renderTable({
+	
+	
+	output$headers <- renderTable({
 	colnames(dataFileReact())
-  })
-  
-  output$uiBoxDetail <- renderUI({
+	})
+	
+	output$uiBoxDetail <- renderUI({
 	if(is.null(dataFileReact())) return()
 	box(
-	  title = "More info",
-	  width = NULL,
-	  solidHeader = TRUE, 
-	  status = "primary",
-	  tabsetPanel(
+		title = "More info",
+		width = NULL,
+		solidHeader = TRUE, 
+		status = "primary",
+		tabsetPanel(
 		type = "tabs", 
 		# Panel headers
 		tabPanel("Headers",
@@ -54,9 +54,9 @@ dataFileReact <- reactive({
 			"datasetSelectColumn",
 			"Choose a column:",
 			choices = colnames(dataFileReact())
-		  ),
-		  sliderInput("datasetHistSlider", "Number of obQservations:", 1, 36, 10),
-		  actionButton(
+			),
+			sliderInput("datasetHistSlider", "Number of obQservations:", 1, 36, 10),
+			actionButton(
 			inputId = "datasetHistSubmit",
 			label = "Submit column"
 			),
@@ -66,75 +66,86 @@ dataFileReact <- reactive({
 		tabPanel("Table",   
 			h4(icon("glyphicon-list-alt"), "Details:")
 		)
-	  )
+		)
 	)
-  })
+	})
 
-  # ------------------------
+	# ------------------------
 
-  
-  histPlotDataFile <- eventReactive(
-	input$datasetHistSubmit,
-	{
-	  dataFileReact()[[ input$datasetSelectColumn ]]
-	}
-  )
-  
-  output$datasetHistPlot <- renderPlot({
+	
+	histPlotDataFile <- eventReactive(
+		input$datasetHistSubmit,
+		{
+			dataFileReact()[[ input$datasetSelectColumn ]]
+		}
+	)
+	
+	output$datasetHistPlot <- renderPlot({
 	data <- histPlotDataFile()[]
 	hist(data, breaks = input$datasetHistSlider)
-  })
-  
-  
-  # ------------------------------
+	})
+	
+	
+	# ------------------------------
 
-  output$contents <- renderTable({
+	output$contents <- renderTable({
 	# req(input$dataFile)
 
 	if (input$disp == "head") {
-	  return(head(dataFileReact()))
+		return(head(dataFileReact()))
 	}
 	else {
-	  return(dataFileReact())
+		return(dataFileReact())
 	}
-  })
+	})
 
 
 
 
-  # -----------------------
-  # -----------------------
-  # mainPanel
+	# -----------------------
+	# -----------------------
+	# mainPanel
 
-  histPlot_df <- eventReactive(
+	histPlot_df <- eventReactive(
 	input$submit,
 	{
-	  df[[ input$columnChoice ]]
+		df[[ input$columnChoice ]]
 	}
-  )
-  
-  output$histPlot <- renderPlot({
+	)
+	
+	output$histPlot <- renderPlot({
 	data <- histPlot_df()[ seq_len(input$slider) ]
 	hist(data)
-  })
+	})
 
-  # -----------------------
-  # -----------------------
-  # widgetPanel
-   # display 10 rows initially
-  output$ex1 <- DT::renderDataTable(
+	# -----------------------
+	# -----------------------
+	# widgetPanel
+	 # display 10 rows initially
+	output$ex1 <- DT::renderDataTable(
 	DT::datatable(
-	  dataFileReact(),
-	  filter = 'top',
-	  extensions = 'Buttons',
-	  options = list(pageLength = 10, buttons = I('colvis'))
+		dataFileReact(),
+		filter = 'top',
+		extensions = 'Buttons',
+		options = list(pageLength = 10, buttons = I('colvis'))
 	)
-  )
+	)
 
 
 
 	# --- SETTINGS ---
+
+	skinTheme <- reactive({	
+		theme <- "blue"						
+		theme <- input$skinThemeRadio 
+		return(theme)
+	})
+
+	output$theme <- renderText({
+		skinTheme()
+	}) 
+ 
 	
 
-  
+	
 }

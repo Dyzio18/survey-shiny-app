@@ -1,4 +1,4 @@
-widgetPanel <- tabItem(
+widgetModuleUI <- tabItem(
     tabName = "widgets",
     h2("Data table"),
     box(width = 12,

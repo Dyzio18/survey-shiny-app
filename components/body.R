@@ -7,17 +7,17 @@
 ###################
 library(shinydashboard)
 
-source('./components/panels/visualisationPanel.R')
-source('./components/panels/datasetPanel.R')
-source('./components/panels/widgetPanel.R')
-source('./components/panels/settingsPanel.R')
+source('./components/modules/visualisationModule.R')
+source('./components/modules/datasetModule.R')
+source('./components/modules/widgetModule.R')
+source('./components/modules/settingsModule.R')
 
 body <- dashboardBody(
 	tabItems(
-		datasetPanel,
-		visualisationPanel,
-		widgetPanel,
-		settingsPanel
+		datasetModuleUI,
+		visualisationModuleUI,
+		widgetModuleUI,
+		settingsModuleUI
 	)
 )
 

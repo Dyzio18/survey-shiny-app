@@ -1,4 +1,4 @@
-visualisationPanel <- tabItem(
+visualisationModuleUI <- tabItem(
 	tabName = "visualisation",
 	fluidRow(
 		box(
