@@ -1,15 +1,32 @@
+source("./components/modules/generateDynamicChartModal.R")
+
 visualisationModuleUI <- tabItem(
 	tabName = "visualisation",
+	h2("Visualisation"),
+	tags$div(id = 'placeholder'),
 	fluidRow(
-		box(
-			title = "Add new chart", width = 6, solidHeader = TRUE, status = "primary",
-			"Charts samples"
+		# Create chart modal
+		tags$div(
+		  generateDynamicChartModalUI("visualisationGenerateChart1")
 		),
 		box(
-			title = "Vizualization", width = 6, solidHeader = TRUE,
-			"Specyfic chart options"
+			title = "Pie chart - Music", status = "primary", solidHeader = TRUE,
+			id = "chartGenerateBox",
+			width = 6,
+			plotOutput("pieChartMockup1")
+		),
+		box(
+			title = "Histgram - Music", status = "primary", solidHeader = TRUE,
+			id = "AAS1e13as",
+			width = 6,
+			plotOutput("pieChartMockup2")
+		),
+		box(
+			title = "Pie chart - Dance", status = "primary", solidHeader = TRUE,
+			id = "BDA3RASAAsf",
+			width = 6,
+			plotOutput("pieChartMockup3")
 		)
-  
 	)
 )
 

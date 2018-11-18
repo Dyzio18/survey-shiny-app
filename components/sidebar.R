@@ -8,10 +8,11 @@ library(shinydashboard)
 
 sidebar <- dashboardSidebar(
 	sidebarMenu(
-
+		menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
 		menuItem("Dataset", tabName = "dataset", icon = icon("cloud-upload")),
 		menuItem("Visualisation", tabName = "visualisation", icon = icon("signal")),
-		menuItem("Data view", tabName = "widgets", icon = icon("folder-open")),
+		menuItem("Raport", tabName = "raport", icon = icon("book")),
+		menuItem("Data view", tabName = "datatable", icon = icon("clipboard")),
 		menuItem("Settings", tabName = "settings", icon = icon("cog"))
 
 	)

@@ -1,6 +1,9 @@
 library(shinydashboard)
 
 source('./server/histBox.R')
+# source('./server/components/dynamicChart.R')
+
+source("./components/modules/generateDynamicChartModal.R")
 
 
 
@@ -32,7 +35,7 @@ dataFileReact <- reactive({
 	
 	
 	output$headers <- renderTable({
-	colnames(dataFileReact())
+		colnames(dataFileReact())
 	})
 	
 	output$uiBoxDetail <- renderUI({
@@ -81,8 +84,8 @@ dataFileReact <- reactive({
 	)
 	
 	output$datasetHistPlot <- renderPlot({
-	data <- histPlotDataFile()[]
-	hist(data, breaks = input$datasetHistSlider)
+		data <- histPlotDataFile()[]
+		hist(data, breaks = input$datasetHistSlider)
 	})
 	
 	
@@ -130,6 +133,46 @@ dataFileReact <- reactive({
 		options = list(pageLength = 10, buttons = I('colvis'))
 	)
 	)
+
+	# --- Vizualization ---
+
+	df <- callModule(generateDynamicChartModal, "visualisationGenerateChart1", dataFileReact() )
+
+	
+
+	# ==============================
+	# ==============================
+	# ==============================
+	# Mockup
+	# ==============================
+	# ==============================
+	# ==============================
+	output$pieChartMockup1 <- renderPlot({
+		data <- dataFileReact()[[ 1 ]]
+		pie(table(data))
+	})
+
+	output$pieChartMockup2<- renderPlot({
+		data <- dataFileReact()[[1]]
+		hist(data)
+	})
+
+	output$pieChartMockup3 <- renderPlot({
+		data <- dataFileReact()[[3]]
+		pie(table(data))
+	})
+
+
+
+
+	# ==============================
+	# ==============================
+	# ==============================
+	# ==============================
+	# ==============================
+	# ==============================
+	# ==============================
+
 
 
 

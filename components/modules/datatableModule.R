@@ -1,5 +1,5 @@
-widgetModuleUI <- tabItem(
-    tabName = "widgets",
+datatableModuleUI <- tabItem(
+    tabName = "datatable",
     h2("Data table"),
     box(width = 12,
         div(

@@ -13,6 +13,10 @@ source('./components/body.R')
 
 
 ui <- dashboardPage(
+	tags$head(
+    	tags$link(rel = "stylesheet", type = "text/css", href = "css/style.css")
+  	),
+
 	header = header,
 	sidebar =  sidebar,
 	body = body,
