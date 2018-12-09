@@ -1,3 +1,6 @@
+# Raport Module
+# Generate raport and export to PDF
+
 raportModuleUI <- tabItem(
     tabName = "raport",
     h2("Raport"),

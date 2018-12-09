@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html, body, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Open Sans', sans-serif !important;
+} 
+
 .modal__generateChart {
     position: fixed;
     top: 100px;
@@ -100,4 +106,16 @@
     font-weight: bold;
     font-size: 3rem;
     text-align: center;
+}
+
+
+
+.content-wrapper {
+    overflow: auto;
+}
+
+.sidebar-menu{
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
 }

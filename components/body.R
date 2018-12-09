@@ -13,12 +13,16 @@ source('./components/modules/datasetModule.R')
 source('./components/modules/datatableModule.R')
 source('./components/modules/raportModule.R')
 source('./components/modules/settingsModule.R')
+source('./components/modules/clusteringModule.R')
+source('./components/modules/descriptiveStatisticsModule.R')
 
 body <- dashboardBody(
 	tabItems(
 		dashboardModuleUI,
 		datasetModuleUI,
 		visualisationModuleUI,
+		clusteringModuleUI,
+		descriptiveStatisticsUI,
 		raportModuleUI,
 		datatableModuleUI,
 		settingsModuleUI

@@ -1,0 +1,21 @@
+{
+  "languages": ["en", "pl"],
+  "translation": [
+    { "en": "Dashboard", "pl": "Panel użytkownika" },
+    { "en": "Dataset", "pl": "Wczytaj dane" },
+    { "en": "Clustering", "pl": "Grupowanie" },
+    { "en": "Descriptive statistics", "pl": "Statystyki opisowe" },
+    { "en": "Visualisation", "pl": "Wizualizacja" },
+    { "en": "Statistics", "pl": "Statystyki" },
+    { "en": "Data view", "pl": "Podgląd danych" },
+    { "en": "Hello Shiny!", "pl": "Witaj Shiny!" },
+    { "en": "Number of bins:", "pl": "Liczba podziałek" },
+    { "en": "Choose color theme:", "pl": "Wybierz motyw:"},
+    { "en": "Histogram of x", "pl": "Histogram x"},
+    { "en": "Settings", "pl": "Ustawienia"},
+    { "en": "Color theme", "pl": "Motyw" },
+    { "en": "Choose language", "pl": "Wybierz język"},
+    { "en": "Choose a column:", "pl": "Wybierz kolumne"},
+    { "en": "Summary statistic", "pl": "Podsumowanie statystyk"}
+  ]
+}

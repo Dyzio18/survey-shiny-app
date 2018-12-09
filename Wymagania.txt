@@ -1,0 +1,21 @@
+Aplikacja do 
+analizy danych ankietowych w j�zyku R:
+- wprowadzanie danych ankietowych prezentowanych na r�nych skalach 
+liczbowych z plik�w *.txt, *.csv, *.xlsx,
+- skalowanie,
+- podpowied� analizy na podstawie typu danych,
+- statystyki opisowe, dopasowanie rozk�adu danych
+- testy podobie�stwa niepodobie�stwa grup,
+- wizualizacja wynik�w.
+- ca�o�� wykonana w R - analizy plus shine.
+
+
+TODO: 
+ - moduł statystyk opisowych > tabelki nie są RWD 5min. nadanie dodatkowej klasy responsive
+
+
+
+
+
+
+
