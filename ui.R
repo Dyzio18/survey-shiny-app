@@ -4,22 +4,21 @@
 # Initializes the ui. 
 # Used to load in your header, sidebar, and body components.
 ###################
-library(shinydashboard)
 
-source('./components/header.R')
-source('./components/sidebar.R')
-source('./components/body.R')
-
-
+source('./ui/header.R')
+source('./ui/sidebar.R')
+source('./ui/body.R')
 
 ui <- dashboardPage(
 	tags$head(
-    	tags$link(rel = "stylesheet", type = "text/css", href = "css/style.css")
-  	),
-
+		tags$link(
+			rel = "stylesheet",
+			type = "text/css",
+			href = "css/style.css"
+		)
+	),
 	header = header,
 	sidebar =  sidebar,
 	body = body,
 	skin = "blue"
-
 )

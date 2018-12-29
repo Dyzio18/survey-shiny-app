@@ -9,16 +9,16 @@
 # install.packages("wordcloud") # word-cloud generator 
 # install.packages("RColorBrewer") # color palettes
 
-library("tm")
-library("SnowballC")
-library("wordcloud")
-library("RColorBrewer")
+# library("tm")
+# library("SnowballC")
+# library("wordcloud")
+# library("RColorBrewer")
 
-
+#  Translation
 library(shiny.i18n)
 i18n <- Translator$new(translation_json_path = "i18n/translation.json")
-
-language <- "en"
+# language <- "en"
+language <- "pl"
 i18n$set_translation_language(language)
 
 

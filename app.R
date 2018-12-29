@@ -9,10 +9,6 @@ library(shinydashboard)
 library(DT)
 
 
-
-source("moduleDemo.R")
-
-
 source('./ui.R')
 source('./server.R')
 

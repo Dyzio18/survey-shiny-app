@@ -13,9 +13,16 @@
     { "en": "Choose color theme:", "pl": "Wybierz motyw:"},
     { "en": "Histogram of x", "pl": "Histogram x"},
     { "en": "Settings", "pl": "Ustawienia"},
-    { "en": "Color theme", "pl": "Motyw" },
     { "en": "Choose language", "pl": "Wybierz język"},
     { "en": "Choose a column:", "pl": "Wybierz kolumne"},
-    { "en": "Summary statistic", "pl": "Podsumowanie statystyk"}
+    { "en": "Color theme", "pl": "Motyw" },
+    { "en": "Summary statistic", "pl": "Podsumowanie statystyk"},
+    { "en": "Responses", "pl": "Ilość ankiet" },
+    { "en": "Questions", "pl": "Ilość pytań" },
+    { "en": "Cat", "pl": "kot" },
+    { "en": "File size", "pl": "Rozmiar pliku" },
+
+
+    { "en": "Dog", "pl": "Pies" }
   ]
 }
