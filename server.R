@@ -1,6 +1,8 @@
 library(shinydashboard)
 
 source('./server/histBox.R')
+source('./modules/gapModule.R')
+
 # source('./server/components/dynamicChart.R')
 
 source("./components/modules/generateDynamicChartModal.R")
@@ -318,9 +320,12 @@ observeEvent(
 # // Settings Module
 # -------------------------
 
+gapCall <- callModule(gapModule, "all",  dataFileReact() )
 	
-
-
+gapReactive <- reactive({
+	req(dataFileReact())
+	gapCall()
+})
 
 
 }
