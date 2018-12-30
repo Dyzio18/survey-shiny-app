@@ -14,15 +14,29 @@ sidebar <- dashboardSidebar(
 			icon = icon("dashboard")
 		),
 		menuItem(
-			i18n$t("Dataset"),
+			i18n$t("Data preview"),
 			tabName = "dataset",
 			icon = icon("cloud-upload")
 		),
 		menuItem(
-			i18n$t("Settings"),
-			tabName = "settingsPanel",
+			i18n$t("Statistics"),
+			tabName = "statistics",
+			icon = icon("signal"),
+			menuSubItem(
+				i18n$t("Descriptive statistics"),
+				tabName = "descriptive_statistics"
+			),
+			menuSubItem(
+				i18n$t("Clustering"),
+				tabName = "clustering"
+			)
+		),
+		menuItem(
+			i18n$t("About program"),
+			tabName = "about_program",
 			icon = icon("dashboard")
 		)
+
 	)
 )
 

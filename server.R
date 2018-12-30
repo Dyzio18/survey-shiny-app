@@ -2,10 +2,9 @@
 
 source('./modules/uploadModule.R')
 source('./modules/previewModule.R')
-source('./modules/settingsModule.R')
-source('./modules/dashboard/fileDetailsModule.R')
-
-
+source('./modules/descriptiveStatisticsModule.R')
+source('./modules/clusteringModule.R')
+source('./modules/aboutProgramModule.R')
 
 server <- function(input, output, session) {
 	
@@ -27,16 +26,21 @@ server <- function(input, output, session) {
 			df()
 		)
 		callModule(
-			fileDetailsModule,
-			"fileDetails",
+			descriptiveStatisticsModule,
+			"descriptiveStatistics",
+			df()
+		)
+		callModule(
+			clusteringModule,
+			"clustering",
 			df()
 		)
     })
 
-	# Settings
-	settings <- callModule(
-		settingsModule,
-		"settings"
+	# About
+	about <- callModule(
+		aboutProgramModule,
+		"aboutProgram"
 	)
 
 

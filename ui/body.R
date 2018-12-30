@@ -9,14 +9,18 @@ library(shinydashboard)
 
 source('./ui/panels/dashboardPanelUI.R')
 source('./ui/panels/datasetPanelUI.R')
-source('./ui/panels/settingsPanelUI.R')
+source('./ui/panels/descriptiveStatisticsPanelUI.R')
+source('./ui/panels/clusteringPanelUI.R')
+source('./ui/panels/aboutProgramPanelUI.R')
 
 
 body <- dashboardBody(
 	tabItems(
 		dashboardPanelUI,
 		datasetPanelUI,
-		settingsPanelUI
+		descriptiveStatisticsPanelUI,
+		clusteringPanelUI,
+		aboutProgramPanelUI
 	)
 )
 

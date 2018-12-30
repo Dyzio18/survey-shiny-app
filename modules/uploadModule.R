@@ -11,9 +11,14 @@ uploadModuleUI <- function(id) {
             box(
 
                 fileInput(
-                    ns("file"), label = "Upload File"),
-                    # checkboxInput(ns("heading"), "Has heading"),
-                    selectInput(
+                    ns("file"), label = "Upload File"
+                ),
+                # actionButton(
+                #     ns("loadDemo"),
+                #     label = "Load demo survey"
+                # ),
+                # checkboxInput(ns("heading"), "Has heading"),
+                selectInput(
                     ns("quote"),
                     "Quote",
                     c(
@@ -39,7 +44,7 @@ uploadModuleUI <- function(id) {
 
 uploadModule <- function(input, output, session, stringsAsFactors) {
 
-    sampleSurvey <- "E:\\survey-shiny-app\\www\\resources\\sample.csv"
+    sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample.csv"
 
     # The selected file, if any
     userFile <- reactive({
