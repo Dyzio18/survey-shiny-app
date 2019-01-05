@@ -1,0 +1,23 @@
+"How old are you?", "What is your salary?", "Years of professional experience", "You work as freelancer?", "What is your favorite language?", "Write your opinion about training", "How would you rate the training (1-bad / 5-good)?"
+21,2000,1,"No","JS", "interesting and practical", 5
+23,2300,2,"Yes","R", "I expected more teoretical", 2
+24,5000,3,"No","JS", "Issue from real life", 5
+22,4300,4,"Yes","JS", "I think is good and practical", 5
+23,4000,3,"Yes","C#", "little boring", 3
+33,8000,10,"Yes","C#", "a lot of practical information", 5
+29,8200,6,"Yes","C++", "in my opinion is boring", 2
+22,2500,1,"Yes","C++", "I think is good and practical", 5
+38,7000,12,"Yes","C++", "no teoretical background", 3
+50,15800,18,"Yes","C++", "good and practical; need more teoretical information", 5
+44,13000,16,"Yes","Java", "good and practical issue", 4
+38,6400,10,"No","JS", "without teoretical background", 3
+25,7300,4,"Yes","R", "", 5
+30,7900,6,"No","JS", "I think is good and practical", 5
+26,4300,3,"Yes","JS", "a lot of practise", 5
+30,2300,1,"Yes","C#", "I think is good and practical", 4
+33,6000,8,"Yes","Java", "ok", 4
+29,4200,6,"Yes","C++", "interesting and practical", 5
+25,2700,2,"Yes","Java", "I think is good and practical", 5
+48,12000,12,"Yes","C++", "interesting discussion, practical", 5
+34,6500,6,"Yes","JS", "practical", 5
+26,4800,4,"Yes","Java", "I like exercises", 5

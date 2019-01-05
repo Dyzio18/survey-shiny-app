@@ -46,9 +46,7 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
 
     sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample.csv"
 
-    # The selected file, if any
     userFile <- reactive({
-        # If no file is selected, don't do anything
         validate(
             need(
                 input$file,
@@ -99,7 +97,6 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
                 color = "purple"
             )
         })
-        
     })
 
     return(dataframe)

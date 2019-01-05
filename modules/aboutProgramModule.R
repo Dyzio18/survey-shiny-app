@@ -1,3 +1,4 @@
+# @Author: Patryk Nizio "Dyzio" / 2019
 # Display information in "About program" tab.
 # Contain app description and help pages
 

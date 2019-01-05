@@ -1,24 +1,24 @@
-# library(shinydashboard)
+# @Author: Patryk Nizio "Dyzio" / 2019
 
 source('./modules/uploadModule.R')
 source('./modules/previewModule.R')
 source('./modules/descriptiveStatisticsModule.R')
 source('./modules/clusteringModule.R')
 source('./modules/aboutProgramModule.R')
+source('./modules/nlpModule.R')
 
 server <- function(input, output, session) {
 	
-	sampleSurvey <- "E:\\survey-shiny-app\\www\\resources\\sample.csv"
+	sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample.csv"
 	# sampleSurvey <- "https://raw.githubusercontent.com/Dyzio18/R-learning/master/sample.csv"
 	
 	df <- callModule(
 			uploadModule,
 			"upload",
-			stringsAsFactors = FALSE
+			stringsAsFactors = TRUE
 		)
 
-
-    observe({
+	observe({
 		df()
 		callModule(
 			previewModule,
@@ -35,6 +35,11 @@ server <- function(input, output, session) {
 			"clustering",
 			df()
 		)
+		callModule(
+			nlpModule,
+			"nlp",
+			df()
+		)
     })
 
 	# About
@@ -42,6 +47,5 @@ server <- function(input, output, session) {
 		aboutProgramModule,
 		"aboutProgram"
 	)
-
 
 }

@@ -32,6 +32,11 @@ sidebar <- dashboardSidebar(
 			)
 		),
 		menuItem(
+			"Text minning",
+			tabName = "nlp_module",
+			icon = icon("dashboard")
+		),
+		menuItem(
 			i18n$t("About program"),
 			tabName = "about_program",
 			icon = icon("dashboard")

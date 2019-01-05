@@ -11,6 +11,7 @@ source('./ui/panels/dashboardPanelUI.R')
 source('./ui/panels/datasetPanelUI.R')
 source('./ui/panels/descriptiveStatisticsPanelUI.R')
 source('./ui/panels/clusteringPanelUI.R')
+source('./ui/panels/nlpPanelUI.R')
 source('./ui/panels/aboutProgramPanelUI.R')
 
 
@@ -20,6 +21,7 @@ body <- dashboardBody(
 		datasetPanelUI,
 		descriptiveStatisticsPanelUI,
 		clusteringPanelUI,
+		nlpPanelUI,
 		aboutProgramPanelUI
 	)
 )

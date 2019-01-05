@@ -6,6 +6,7 @@ previewModuleUI <- function(id) {
     ns <- NS(id)
     fluidRow(
         h2(class="panel__title", i18n$t("Data preview")),
+        br(),
         column(12,
             uiOutput(ns("controls")),
             tableOutput(ns("table"))

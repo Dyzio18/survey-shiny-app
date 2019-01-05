@@ -1,3 +1,5 @@
+library(ggplot2)
+
 ###################
 # UI
 ###################
@@ -5,9 +7,9 @@ descriptiveStatisticsModuleUI <- function(id) {
     ns <- NS(id)
     fluidRow(
         h2(class="panel__title", i18n$t("Descriptive statistics")),
-        column(12,
-            uiOutput(ns("controls")),
-            tableOutput(ns("table"))
+        div( 
+            id="descriptive_statistics_descElem",
+            uiOutput(ns("descriptive_statistics_stat"))
         )
     )
 }
@@ -17,14 +19,52 @@ descriptiveStatisticsModuleUI <- function(id) {
 ###################
 descriptiveStatisticsModule <- function(input, output, session, data) {
 
-    output$table <- renderTable(data)
-    
-    output$controls <- renderUI({
-        ns <- session$ns
-        selectInput(ns("col"), "Columns", names(data), multiple = TRUE)
+    output$descriptive_statistics_stat <- renderUI({
+        dataset <- data
+
+        for(i in names(dataset)){
+            # Numeric
+            if (is.numeric(dataset[[i]])) {
+                statsString = "<table style=\"width:100%\" class=\"table table-bordered\"><tr>"
+                summStats <- summary(dataset[[i]])
+
+                for(summElem in names(summStats)){
+                    statsString <- paste(statsString, '<th>', summElem, '</th>')
+                }
+
+                statsString <- paste(statsString,'</tr><tr>')
+                
+                for(summElem in names(summStats)){
+                    statsString <- paste(statsString, '<td>', summStats[[summElem]], '</td>')
+                }
+                statsString <- paste(statsString,'</tr></table>')
+                # currentIndex = i
+
+                insertUI(
+                    selector = "#descriptive_statistics_descElem",
+                    where = "beforeEnd",
+                    ui = box(
+                        title = i, solidHeader = TRUE, width=6,
+                        i18n$t("Summary statistic"), br(),
+                        HTML(statsString)
+                        # renderPlot(
+                        #     plot(
+                        #             dataset[[currentIndex]],
+                        #             xlab="N", 
+                        #             ylab="value"
+                        #     )
+                        # )
+                    )
+                )
+            } 
+            # // Numeric
+
+
+        }
+        
+        return()
     })
-    return(reactive({
-        validate(need(input$col, FALSE))
-        data[, input$col]
-    }))
+
+
+
 }
