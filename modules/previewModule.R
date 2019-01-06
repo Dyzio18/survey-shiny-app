@@ -1,3 +1,5 @@
+library(DT)
+
 ###################
 # UI
 ###################
@@ -8,8 +10,7 @@ previewModuleUI <- function(id) {
         h2(class="panel__title", i18n$t("Data preview")),
         br(),
         column(12,
-            uiOutput(ns("controls")),
-            tableOutput(ns("table"))
+            DT::dataTableOutput(ns("table"))
         )
     )
 }
@@ -20,13 +21,25 @@ previewModuleUI <- function(id) {
 
 previewModule <- function(input, output, session, data) {
 
-    selectedColumn <- reactive({
-        validate(need(input$col, FALSE))
-        data[, input$col]
-    })
-    output$table <- renderTable(head(selectedColumn()))
-    output$controls <- renderUI({
-        ns <- session$ns
-        selectInput(ns("col"), "Columns", names(data), multiple = TRUE)
-    })
+	output$table <- DT::renderDataTable(
+		DT::datatable(
+			data,
+			filter = 'top',
+			extensions = 'Buttons',
+			options = list(pageLength = 10, buttons = I('colvis'))
+		)
+	)
+    # selectedColumn <- reactive({
+    #     validate(need(input$col, FALSE))
+    #     data[, input$col]
+    # })
+    # output$table <- renderTable(head(selectedColumn()))
+    # output$controls <- renderUI({
+    #     ns <- session$ns
+    #     selectInput(ns("col"), "Columns", names(data), multiple = TRUE)
+    # })
+
+    # output$barPlot <- renderPlot({
+    #     PlotBars(data, Zajecie) + labs(x = "", y = "% odpowiedzi")
+    # })
 }

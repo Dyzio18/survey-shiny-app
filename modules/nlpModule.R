@@ -8,7 +8,6 @@ library(memoise)
 library(tidytext)
 library(stringr)
 
-
 ###################
 # UI
 ###################
@@ -131,7 +130,6 @@ nlpModule <- function(input, output, session, data) {
         ggplot(textSentiments, aes(sentiment, n)) +
             geom_col(show.legend = FALSE) 
     })
-
 
     output$selectTest <- renderUI({
         h3(

@@ -13,11 +13,13 @@ uploadModuleUI <- function(id) {
                 fileInput(
                     ns("file"), label = "Upload File"
                 ),
-                # actionButton(
-                #     ns("loadDemo"),
-                #     label = "Load demo survey"
-                # ),
-                # checkboxInput(ns("heading"), "Has heading"),
+                actionButton(
+                    ns("demoSurvey"),
+                    label = "Load demo survey",
+                    class = "btn btn-link"
+                ),
+                hr(),
+                selectInput(ns("separator"), "Separator", choices = c(Comma = ",", Semicolon = ";", Tab = "\t"), selected = ","),
                 selectInput(
                     ns("quote"),
                     "Quote",
@@ -44,7 +46,7 @@ uploadModuleUI <- function(id) {
 
 uploadModule <- function(input, output, session, stringsAsFactors) {
 
-    sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample.csv"
+    sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample_opinion.csv"
 
     userFile <- reactive({
         validate(
@@ -60,11 +62,34 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
         print(userFile())
     })
 
+    # TODO: Modal "Demo loaded"
+    mockupSurvey <- eventReactive(input$demoSurvey, {
+        sampleSurvey
+    })
+    observeEvent(input$demoSurvey, {
+        msg <- "Demo survey is loaded with success"
+        if(!is.null(input$file)) {
+            msg <- "After loading the questionnaire, the demo file is inactive"
+        }
+
+        showModal(modalDialog(
+            title = "Demo survey",
+            h3(msg),
+            easyClose = TRUE
+        ))
+    })
+
     dataframe <- reactive({
+        surveyPath <- "E:\\new_survey-shiny-app\\www\\resources\\sample_opinion.csv"
+        if(!is.null(input$file)){
+            surveyPath <- userFile()$datapath
+        }
+        # TODO: file validatation 
         read.csv(
-            userFile()$datapath,
+            surveyPath,
             header = TRUE,
             quote = input$quote,
+            sep = input$separator,
             stringsAsFactors = stringsAsFactors
         )
     })

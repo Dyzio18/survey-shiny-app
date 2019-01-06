@@ -16,7 +16,7 @@ sidebar <- dashboardSidebar(
 		menuItem(
 			i18n$t("Data preview"),
 			tabName = "dataset",
-			icon = icon("cloud-upload")
+			icon = icon("list-alt", lib = "glyphicon")
 		),
 		menuItem(
 			i18n$t("Statistics"),
@@ -34,12 +34,12 @@ sidebar <- dashboardSidebar(
 		menuItem(
 			"Text minning",
 			tabName = "nlp_module",
-			icon = icon("dashboard")
+			icon = icon("text-background", lib = "glyphicon")
 		),
 		menuItem(
 			i18n$t("About program"),
 			tabName = "about_program",
-			icon = icon("dashboard")
+			icon = icon("info-sign", lib = "glyphicon")
 		)
 
 	)
