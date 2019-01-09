@@ -16,16 +16,13 @@ html, body, h1, h2, h3, h4, h5, h6, p {
     border-bottom: 4px solid #5c196b;
 }
 
-
 .modal__generateChart {
     position: fixed;
     top: 100px;
     left: 50%;
-
     z-index: 600;
     width: 80%;
     min-height: 400px;
-
     margin : 0 auto;
     background: rgba(191, 236, 238, 0.699);
 }
@@ -52,15 +49,12 @@ html, body, h1, h2, h3, h4, h5, h6, p {
     background: #eee;
     border-radius: 15px;
     margin-bottom: 10px;
-    
 }
-
 
 .chartCard__img{
     max-width: 100%;
     height: auto;
 }
-
 
 /* ======================== */
 /* generateChart__modal */
@@ -68,7 +62,6 @@ html, body, h1, h2, h3, h4, h5, h6, p {
     border-radius: 20px;
     padding: 20px;
 }
-
 
 /* ======================== */
 /* Buttons > Circle buttons */
@@ -102,11 +95,9 @@ html, body, h1, h2, h3, h4, h5, h6, p {
 
 
 /* Helpers */
-
 .text--white{
     color: #fff;
 }
-
 
 .blankPage{
     min-height: 600px;
@@ -120,8 +111,6 @@ html, body, h1, h2, h3, h4, h5, h6, p {
     font-size: 3rem;
     text-align: center;
 }
-
-
 
 .content-wrapper {
     overflow: auto;

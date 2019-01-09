@@ -19,6 +19,11 @@ sidebar <- dashboardSidebar(
 			icon = icon("list-alt", lib = "glyphicon")
 		),
 		menuItem(
+			i18n$t("Visualisation"),
+			tabName = "visualisation",
+			icon = icon("list-alt", lib = "glyphicon")
+		),
+		menuItem(
 			i18n$t("Statistics"),
 			tabName = "statistics",
 			icon = icon("signal"),

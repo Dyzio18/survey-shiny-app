@@ -2,7 +2,7 @@
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(tm)
+# library(tm)
 library(wordcloud)
 library(memoise)
 library(tidytext)
@@ -136,6 +136,5 @@ nlpModule <- function(input, output, session, data) {
             class(selectedColumn())
         )
     })
-
 
 }

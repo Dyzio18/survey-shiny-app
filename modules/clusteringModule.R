@@ -12,7 +12,6 @@ clusteringModuleUI <- function(id) {
             column(12,uiOutput(ns("setup")))
         ),
         plotOutput(ns("clusteringPlot"))
-
     )
 }
 

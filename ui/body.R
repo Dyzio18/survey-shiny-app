@@ -1,14 +1,13 @@
 ###################
 # body.R
 # 
-# Create the body for the ui. 
-# If you had multiple tabs, you could potentially segment those into their own
-# components as well.
+# Create the body for the ui.
 ###################
 library(shinydashboard)
 
 source('./ui/panels/dashboardPanelUI.R')
 source('./ui/panels/datasetPanelUI.R')
+source('./ui/panels/visualisationPanelUI.R')
 source('./ui/panels/descriptiveStatisticsPanelUI.R')
 source('./ui/panels/clusteringPanelUI.R')
 source('./ui/panels/nlpPanelUI.R')
@@ -19,6 +18,7 @@ body <- dashboardBody(
 	tabItems(
 		dashboardPanelUI,
 		datasetPanelUI,
+		visualisationPanelUI,
 		descriptiveStatisticsPanelUI,
 		clusteringPanelUI,
 		nlpPanelUI,

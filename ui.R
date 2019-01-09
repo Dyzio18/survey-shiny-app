@@ -2,7 +2,7 @@
 # ui.R
 # 
 # Initializes the ui. 
-# Used to load in your header, sidebar, and body components.
+# Load header, sidebar, and body components.
 ###################
 
 source('./ui/header.R')

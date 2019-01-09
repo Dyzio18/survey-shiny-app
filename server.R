@@ -8,10 +8,7 @@ source('./modules/aboutProgramModule.R')
 source('./modules/nlpModule.R')
 
 server <- function(input, output, session) {
-	
-	sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample.csv"
-	# sampleSurvey <- "https://raw.githubusercontent.com/Dyzio18/R-learning/master/sample.csv"
-	
+		
 	df <- callModule(
 			uploadModule,
 			"upload",

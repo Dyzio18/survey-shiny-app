@@ -46,7 +46,8 @@ uploadModuleUI <- function(id) {
 
 uploadModule <- function(input, output, session, stringsAsFactors) {
 
-    sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample_opinion.csv"
+    #sampleSurvey <- "E:\\new_survey-shiny-app\\www\\resources\\sample_opinion.csv"
+    sampleSurvey <- "https://gist.githubusercontent.com/Dyzio18/c2bcae3e37619f77179754de2216fabb/raw/d1dea18089eae45e466afd80a6e4bab82adef782/sample_survey.csv"
 
     userFile <- reactive({
         validate(
@@ -80,7 +81,7 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
     })
 
     dataframe <- reactive({
-        surveyPath <- "E:\\new_survey-shiny-app\\www\\resources\\sample_opinion.csv"
+        surveyPath <- sampleSurvey
         if(!is.null(input$file)){
             surveyPath <- userFile()$datapath
         }
