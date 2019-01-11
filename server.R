@@ -2,10 +2,11 @@
 
 source('./modules/uploadModule.R')
 source('./modules/previewModule.R')
+source('./modules/visualisationModule.R')
 source('./modules/descriptiveStatisticsModule.R')
 source('./modules/clusteringModule.R')
-source('./modules/aboutProgramModule.R')
 source('./modules/nlpModule.R')
+source('./modules/aboutProgramModule.R')
 
 server <- function(input, output, session) {
 		
@@ -25,6 +26,11 @@ server <- function(input, output, session) {
 		callModule(
 			descriptiveStatisticsModule,
 			"descriptiveStatistics",
+			df()
+		)
+		callModule(
+			visualisationModule,
+			"visualisation",
 			df()
 		)
 		callModule(

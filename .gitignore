@@ -1,6 +1,9 @@
 # Tests
 demo.R
 
+# VSC
+.vscode/
+
 # History files
 .Rhistory
 .Rapp.history

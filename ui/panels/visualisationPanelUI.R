@@ -1,6 +1,7 @@
 
+source('./modules/visualisationModule.R')
 
 visualisationPanelUI <- tabItem(
     tabName = "visualisation",
-    h2("visualisation panel")
+    visualisationModuleUI("visualisation")
 )
