@@ -60,19 +60,19 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
     })
 
     observe({
-        print(userFile())
+        print(mockupSurvey())
     })
 
-    # TODO: Modal "Demo loaded"
     mockupSurvey <- eventReactive(input$demoSurvey, {
         sampleSurvey
     })
+
     observeEvent(input$demoSurvey, {
         msg <- "Demo survey is loaded with success"
         if(!is.null(input$file)) {
             msg <- "After loading the questionnaire, the demo file is inactive"
         }
-
+        
         showModal(modalDialog(
             title = "Demo survey",
             h3(msg),
@@ -81,7 +81,12 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
     })
 
     dataframe <- reactive({
+        # Load demo survey only on button action (reactive expression)
+        # surveyPath <- mockupSurvey()
+
+        # [DEV] init app with loaded file (for development)
         surveyPath <- sampleSurvey
+
         if(!is.null(input$file)){
             surveyPath <- userFile()$datapath
         }
