@@ -1,4 +1,5 @@
 library(ggplot2)
+source('./functions.R')
 
 ###################
 # UI
@@ -44,16 +45,9 @@ descriptiveStatisticsModule <- function(input, output, session, data) {
                     selector = "#descriptive_statistics_descElem",
                     where = "beforeEnd",
                     ui = box(
-                        title = i, solidHeader = TRUE, width=6,
+                        title = colName(i), solidHeader = TRUE, width=6,
                         i18n$t("Summary statistic"), br(),
                         HTML(statsString)
-                        # renderPlot(
-                        #     plot(
-                        #             dataset[[currentIndex]],
-                        #             xlab="N", 
-                        #             ylab="value"
-                        #     )
-                        # )
                     )
                 )
             } 

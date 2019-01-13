@@ -73,11 +73,13 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
             msg <- "After loading the questionnaire, the demo file is inactive"
         }
         
-        showModal(modalDialog(
-            title = "Demo survey",
-            h3(msg),
-            easyClose = TRUE
-        ))
+        showModal(
+            modalDialog(
+                title = "Demo survey",
+                h3(msg),
+                easyClose = TRUE
+            )
+        )
     })
 
     dataframe <- reactive({
@@ -128,6 +130,13 @@ uploadModule <- function(input, output, session, stringsAsFactors) {
                 color = "purple"
             )
         })
+        showModal(
+            modalDialog(
+                title = "Success",
+                h3("Load data with succes"),
+                easyClose = TRUE
+            )
+        )
     })
 
     return(dataframe)
